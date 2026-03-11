@@ -1,0 +1,30 @@
+# =============================================================================
+# agency-fleet — Isolated agent runtime
+#
+# Quick start:
+#   docker compose -f docker/docker-compose.yml up -d
+#   docker exec -it agency-fleet claude login
+#   curl http://localhost:7890/health
+# =============================================================================
+
+services:
+  agency-fleet:
+    container_name: agency-fleet
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "7890:7890"
+    environment:
+      - NODE_ENV=production
+      - GC_API_URL=http://host.docker.internal:3456
+    volumes:
+      # Persist Claude auth token across container restarts
+      - agency-auth:/home/agency/.claude/.credentials
+      # Persist workspace between runs
+      - agency-workspace:/home/agency/workspace
+    restart: unless-stopped
+
+volumes:
+  agency-auth:
+  agency-workspace:

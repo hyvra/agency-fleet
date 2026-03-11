@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Write(/home/agency/workspace/**)",
+      "Edit(/home/agency/workspace/**)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(echo:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(git:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)",
+      "Read(/home/agency/.claude/settings.json)",
+      "Write(/home/agency/.claude/**)",
+      "Edit(/home/agency/.claude/**)"
+    ]
+  }
+}
