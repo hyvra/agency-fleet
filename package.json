@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/hyvra/agency-fleet#readme",
   "devDependencies": {
+    "@types/node": "^25.4.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
