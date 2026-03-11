@@ -62,8 +62,11 @@ const server = http.createServer((req, res) => {
           '--max-turns', '10'
         ];
 
+        console.log('Starting:', agent, 'run_id:', run_id);
+
         const proc = spawn('claude', args, {
           cwd: '/home/agency/workspace',
+          stdio: ['ignore', 'pipe', 'pipe'],
           env: {
             ...process.env,
             GROUND_CONTROL_RUN_ID: run_id || '',
@@ -73,8 +76,9 @@ const server = http.createServer((req, res) => {
 
         let stdout = '';
         let stderr = '';
-        proc.stdout.on('data', d => stdout += d);
-        proc.stderr.on('data', d => stderr += d);
+        proc.stdout.on('data', d => { stdout += d; });
+        proc.stderr.on('data', d => { stderr += d; console.error('STDERR:', d.toString().slice(0, 200)); });
+        proc.on('error', (err) => { console.error('Spawn error:', agent, err.message); });
 
         proc.on('close', (code) => {
           const gcUrl = process.env.GC_API_URL || 'http://host.docker.internal:3456';

@@ -18,6 +18,7 @@ services:
     environment:
       - NODE_ENV=production
       - GC_API_URL=http://host.docker.internal:3456
+      - CLAUDE_CODE_OAUTH_TOKEN=${CLAUDE_CODE_OAUTH_TOKEN}
     volumes:
       # Persist Claude auth token across container restarts
       - agency-auth:/home/agency/.claude/.credentials

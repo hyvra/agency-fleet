@@ -1,76 +1,69 @@
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
+
+__pycache__/
 ._*
-
-# Thumbnails
-Thumbs.db
-
-# Editor directories and files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.project
+.AppleDouble
+.cache/
 .classpath
+.DS_Store
+.env
+.idea/
+.LSOverride
+.nyc_output/
+.project
+.Python
 .settings/
+.venv
+.vscode/
+*.egg-info/
+*.lcov
+*.log
+*.py[cod]
+*.so
 *.sublime-project
 *.sublime-workspace
-
+*.swo
+*.swp
+*.temp
+*.tmp
+*~
+*$py.class
+# agent/skill files are excluded.
+# Build outputs
+# Editor directories and files
+# Generated integration files — run scripts/convert.sh to regenerate locally
+# Logs
+# macOS
 # Node.js (if adding web tools later)
+# Personal notes and scratch files
+# Python (if adding scripts)
+# Temporary files
+# Testing
+# The scripts/ and integrations/*/README.md files ARE committed; only generated
+# Thumbnails
+build/
+coverage/
+dist/
+docker/.env
+env/
+ENV/
+integrations/aider/CONVENTIONS.md
+integrations/antigravity/agency-*/
+integrations/cursor/rules/
+integrations/gemini-cli/gemini-extension.json
+integrations/gemini-cli/skills/
+integrations/openclaw/
+integrations/opencode/agents/
+integrations/windsurf/.windsurfrules
+logs/
 node_modules/
+NOTES.md
+notes/
 npm-debug.log*
+package-lock.json
+scratch/
+Thumbs.db
+TODO.md
+venv/
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
 yarn.lock
-
-# Python (if adding scripts)
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-ENV/
-.venv
-
-# Logs
-*.log
-logs/
-
-# Temporary files
-*.tmp
-*.temp
-.cache/
-
-# Testing
-coverage/
-.nyc_output/
-*.lcov
-
-# Build outputs
-dist/
-build/
-*.egg-info/
-
-# Personal notes and scratch files
-scratch/
-notes/
-TODO.md
-NOTES.md
-
-# Generated integration files — run scripts/convert.sh to regenerate locally
-# The scripts/ and integrations/*/README.md files ARE committed; only generated
-# agent/skill files are excluded.
-integrations/antigravity/agency-*/
-integrations/gemini-cli/skills/
-integrations/gemini-cli/gemini-extension.json
-integrations/opencode/agents/
-integrations/cursor/rules/
-integrations/aider/CONVENTIONS.md
-integrations/windsurf/.windsurfrules
-integrations/openclaw/
