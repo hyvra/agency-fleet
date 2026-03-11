@@ -73,7 +73,7 @@ Drive consistent social media growth through autonomous carousel publishing:
 - **Requires**: `playwright install chromium`
 
 ### Learning System
-- **Storage**: `/tmp/carousel/learnings.json` — persistent knowledge base updated after every post
+- **Storage**: `$HOME/.carousel/learnings.json` — persistent knowledge base updated after every post
 - **Script**: `learn-from-analytics.js` processes analytics data into actionable insights
 - **Tracks**: Best hooks, optimal posting times/days, engagement rates, visual style performance
 - **Capacity**: Rolling 100-post history for trend analysis
@@ -127,6 +127,12 @@ Drive consistent social media growth through autonomous carousel publishing:
 2. **Visual Coherence**: Slide 1 from text prompt; slides 2-6 use Gemini image-to-image with `slide-1.jpg` as `--input-image`
 3. **Vision Verification**: Agent uses its own vision model to check each slide for text legibility, spelling, quality, and no text in bottom 20%
 4. **Auto-Regeneration**: If any slide fails, regenerate only that slide with Gemini (using `slide-1.jpg` as reference), re-verify until all 6 pass
+
+### Phase 3.5: Human Review Gate
+- **STOP** and present generated content for human approval before publishing
+- Display: carousel images, captions, hashtags, scheduled time
+- Wait for explicit "APPROVED" before proceeding to Phase 4
+- If rejected, return to Phase 3 with feedback
 
 ### Phase 4: Publish & Track
 1. **Multi-Platform Publishing**: Run `publish-carousel.sh` to push 6 slides to Upload-Post API (`POST /api/upload_photos`) with `platform[]=tiktok&platform[]=instagram`

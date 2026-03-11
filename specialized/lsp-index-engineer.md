@@ -228,6 +228,8 @@ class GraphBuilder {
 
 ### Step 1: Set Up LSP Infrastructure
 ```bash
+> **Note:** The following installs modify your global environment. Consider using `npx` alternatives or confirm with your team before running.
+
 # Install language servers
 npm install -g typescript-language-server typescript
 npm install -g intelephense  # or phpactor for PHP
